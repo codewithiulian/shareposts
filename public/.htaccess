@@ -4,7 +4,7 @@
   Options -Multiviews
   RewriteEngine On
   # For redirecting to index if file not found.
-  RewriteBase /course/mvc/public/
+  RewriteBase /shareposts/public/
   # If file not found redirect to index.php
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f

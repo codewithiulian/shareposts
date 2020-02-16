@@ -1,4 +1,8 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
-  <h1><?php echo $data['title'] ?> </h1>
-  <p>This is the PHP MCV Web application.</p>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-3"><?php echo $data['title'] ?></h1>
+      <div class="lead"><?php echo $data['description'] ?></div>
+    </div>
+  </div>
 <?php require APPROOT . '/views/inc/footer.php'; ?>
