@@ -7,6 +7,20 @@
     }
 
     /**
+     * Registers a user to the database.
+     */
+    public function register($data){
+      // Define the query.
+      $this->db->query('INSERT INTO users (name, email, password) VALUES (:name, :email, :password)');
+      // Bind the parameters.
+      $this->db->bind(':name', $data['name']);
+      $this->db->bind(':email', $data['email']);
+      $this->db->bind(':password', $data['password']);
+
+      return $this->db->execute();
+    }
+
+    /**
      * Returns true if found any matching email in DB.
      */
     public function findUserByEmail($email){
