@@ -11,7 +11,7 @@
     private $pass = DB_PASS;
     private $dbname = DB_NAME;
 
-    private $dbh; // Datanase handler.
+    private $dbh; // Database handler.
     private $stmt; // Query statement.
     private $errror; // Error message.
 

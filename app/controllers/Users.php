@@ -2,7 +2,8 @@
   class Users extends Controller{
     
     public function __construct(){
-
+      // Initialise the user model.
+      $this->userModel = $this->model('User');
     }
 
     public function register() {
@@ -30,6 +31,8 @@
         // Check if email is empty.
         if(empty($data['email'])){
           $data['email_err'] = 'Please enter your email';
+        }else if($this->userModel->findUserByEmail($data['email'])){ // If the email is taken.
+          $data['email_err'] = 'This email is already in use.';
         }
 
         // Password validation.
