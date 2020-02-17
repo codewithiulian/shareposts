@@ -59,6 +59,7 @@
           $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);       
           // Save user to DB.
           if($this->userModel->register($data)){
+            flash('register_success', 'Your are registered, please log in');
             redirect('users/login');
           }else{
             die('Something went wrong.');
@@ -109,7 +110,15 @@
 
         // If all the errors are empty.
         if(empty($data['email_err']) && empty($data['password_err'])){
-          die('SUCCESS'); // Process the form.
+          $loggedInUser = $this->userModel->login($data['email'], $data['password']);
+          
+          // If the user is logged in
+          if($loggedInUser){
+            $this->createUserSession($loggedInUser);
+          }else{
+            $data['password_err'] = 'Password incorrect';
+            $this->view('users/login', $data);  
+          }
         }else{
           $this->view('users/login', $data);
         }
@@ -125,6 +134,27 @@
         $this->view('users/login', $data);
       }
     }
+
+    private function createUserSession($user){
+      $_SESSION['user_id'] = $user->id;
+      $_SESSION['user_email'] = $user->email;
+      $_SESSION['user_name'] = $user->name;
+
+      redirect('pages/index');
+    }
+
+    public function logout(){
+      unset($_SESSION['user_id']);
+      unset($_SESSION['user_name']);
+      unset($_SESSION['user_email']);
+
+      redirect('users/login');
+    }
+
+    private function isLoggedIn(){
+      return isset($_SESSION['user_id']);
+    }
+
   }
 
 
