@@ -3,6 +3,7 @@
 ## Installation
 
 ### 1. Add the following file `config.php` to `app\config\`:
+#### The .gitignore already excludes the config file.
 ```php
 <?php
   // Database parameters.
@@ -25,6 +26,15 @@
 ?> 
 ```
 
-### 2. Create a database instance.
-I use phpMyAdmin for this prototype.
+### 2. Install [XAMPP](https://www.apachefriends.org/index.html) Control Panel.
+#### I use XAMPP for this project, alternatively [WAMPSERVER](http://www.wampserver.com/en/) can be used (or any other server manager).
+![github-large](https://github.com/iulianoana/Assets/blob/master/xampp-img.png "XAMPP")
+
+### 3. Start Apache and MySQL servers from XAMPP Controll Panel.
+#### Make sure to install them first beforehand (start the app in admin mode).
+
+### 4. Create a database instance.
+#### You might want to refer to the following schema I used for this project.
 ![github-large](https://github.com/iulianoana/Assets/blob/master/dbexample.png "phpMyAdmin")
+
+
