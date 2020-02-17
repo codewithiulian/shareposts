@@ -35,6 +35,6 @@
 
 ### 4. Create a database instance.
 #### You might want to refer to the following schema I used for this project.
-![github-large](https://github.com/iulianoana/Assets/blob/master/dbexample.png "phpMyAdmin")
+![github-large](https://github.com/iulianoana/Assets/blob/master/dbexample2.png "phpMyAdmin")
 
 
