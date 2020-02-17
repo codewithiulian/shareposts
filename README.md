@@ -1,6 +1,8 @@
 # SharePosts
 
-Add the following file `config.php` to `app\config\`:
+## Installation
+
+### 1. Add the following file `config.php` to `app\config\`:
 ```php
 <?php
   // Database parameters.
@@ -22,3 +24,7 @@ Add the following file `config.php` to `app\config\`:
   define('APPVERSION', '1.0.0');
 ?> 
 ```
+
+### 2. Create a database instance.
+I use phpMyAdmin for this prototype.
+(https://github.com/iulianoana/Assets/blob/master/dbexample.png "phpMyAdmin")
