@@ -7,6 +7,25 @@
     }
 
     /**
+     * Logs a user in
+     */
+    public function login($email, $password){
+      // Define the query.
+      $this->db->query('SELECT * FROM users WHERE email = :email');
+      // Bind the parameters.
+      $this->db->bind(':email', $email);
+
+      $row = $this->db->single();
+           
+      $hashedPassword = $row->password;
+      if(password_verify($password, $hashedPassword)){
+        return $row;
+      }else{
+        return false;
+      }
+    }
+
+    /**
      * Registers a user to the database.
      */
     public function register($data){
