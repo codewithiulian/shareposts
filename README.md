@@ -27,4 +27,4 @@
 
 ### 2. Create a database instance.
 I use phpMyAdmin for this prototype.
-(https://github.com/iulianoana/Assets/blob/master/dbexample.png "phpMyAdmin")
+![github-large](https://github.com/iulianoana/Assets/blob/master/dbexample.png "phpMyAdmin")
