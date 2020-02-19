@@ -1,9 +1,22 @@
 <?php
 
-  class Posts{
+  class Posts extends Controller{
 
     public function __construct(){
-      echo 'Posts loaded!';
+      if(!isLoggedIn()){
+        redirect('users/login');
+      }
+
+      $this->postModel = $this->model('Post');
+    }
+
+    public function index(){
+      $posts = $this->postModel->getPosts();
+      $data = [
+        'posts' => $posts
+      ];
+
+      $this->view('posts/index', $data);
     }
   }
 
