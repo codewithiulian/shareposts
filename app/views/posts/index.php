@@ -32,7 +32,7 @@
             <div class="card-body">
               <h5 class="card-title"><?php echo $post->postTitle; ?></h5>
               <p class="card-text"><?php echo $post->postBody; ?></p>
-              <a href="<?php echo URLROOT . '/posts/' . $post->postId; ?>" class="btn btn-sm btn-primary">Read more...</a>
+              <a href="<?php echo URLROOT . '/posts/show/' . $post->postId; ?>" class="btn btn-sm btn-primary">Read more...</a>
             </div>
           </div>
         <?php endforeach; ?>
